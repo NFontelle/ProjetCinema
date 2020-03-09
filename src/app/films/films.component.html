@@ -1,0 +1,15 @@
+
+<div style="background-color: #1CDE09;color: red;text-align: center;font-weight: bold">Liste des films</div>
+
+<div>
+<div *ngFor="let film of tabFilms" style="border: 1px solid black;background-color: #d0ff00">
+  <div style="font-weight: bold">{{film.nom}}</div>
+  <div>Durée : {{film.duree}} minutes</div>
+  <div>Réalisateur : {{film.realisateur}}</div>
+  <div *ngFor="let seance of film['seances']">
+    <div>Salle numéro {{seance["salle"].idSalle}}</div>
+    <div>Heure début : {{seance.heureDebut | date:'hh'}}h{{seance.heureDebut | date:'mm dd/MM/yyyy'}}</div>
+  </div><br>
+  <div> Réserver pour <input type="number" placeholder="nb" style="background-color: #d0ff00;width: 50px;border-color: black"> personne(s) <input type="submit" value="RÉSERVER" style="color: #4BA51D"></div><br>
+</div>
+</div>

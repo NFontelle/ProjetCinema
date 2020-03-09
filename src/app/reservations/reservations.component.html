@@ -1,0 +1,13 @@
+<div style="text-align: center;font-weight: bold;margin-top:30px;margin-bottom: 30px">VOS RÉSERVATIONS</div>
+
+<div style="text-align: center">
+  <div *ngFor="let film of tabFilms" style="border: 1px solid black;background-color: #d0ff00">
+    <div style="font-weight: bold">{{film.nom}}</div>
+    <div *ngFor="let seance of film['seances']">
+      <div>Heure début : {{seance.heureDebut | date:'hh'}}h{{seance.heureDebut | date:'mm dd/MM/yyyy'}}</div>
+      <div>Salle numéro {{seance["salle"].idSalle}}</div>
+    </div>
+    <div>Durée : {{film.duree}} minutes</div><br>
+    <div style="text-align: center"><input type="submit" value="ANNULER" style="color: #4BA51D"></div><br>
+  </div>
+</div>
